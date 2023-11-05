@@ -11,6 +11,7 @@ class QuotesSpider(scrapy.Spider):
 
     def parse(self, response):
         resp = json.loads(response.body)
+        print(resp)
         data = resp.get('Data').get("Data")
         print("Data: ",data)
         for datum in data:
