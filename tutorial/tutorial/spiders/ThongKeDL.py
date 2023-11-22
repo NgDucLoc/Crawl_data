@@ -3,11 +3,13 @@
 import scrapy
 import json
 
-class CafefSpider(scrapy.Spider):
+class ThongKeDLSpider(scrapy.Spider):
     name = "ThongKeDL"
     # Symbol  mã chứng khoán của các công ti
     # PageSize kích thước tập dữ liệu cần crawl
-    start_urls = "https://s.cafef.vn/Ajax/PageNew/DataHistory/ThongKeDL.ashx?Symbol=HDB&StartDate=&EndDate=&PageIndex=&PageSize=10000"
+    start_urls = [
+        "https://s.cafef.vn/Ajax/PageNew/DataHistory/ThongKeDL.ashx?Symbol=HDB&StartDate=&EndDate=&PageIndex=&PageSize=10000",
+    ]
 
     def parse(self, response):
         resp = json.loads(response.body)
