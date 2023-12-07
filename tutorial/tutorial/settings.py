@@ -12,6 +12,11 @@ BOT_NAME = "tutorial"
 SPIDER_MODULES = ["tutorial.spiders"]
 NEWSPIDER_MODULE = "tutorial.spiders"
 
+FEED_STORAGES_BASE = {
+    '': 'tutorial.customexport.CustomFileFeedStorage',
+    'file': 'tutorial.customexport.CustomFileFeedStorage',
+}
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "tutorial (+http://www.yourdomain.com)"
